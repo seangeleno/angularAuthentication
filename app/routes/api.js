@@ -33,6 +33,8 @@ module.exports = function(app, express) {
 				user.save();
 			}
 
+			res.send('done')
+			
 		});
 
 	});

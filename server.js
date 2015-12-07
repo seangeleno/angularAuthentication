@@ -7,8 +7,8 @@ var app        = express(); 				// define our app using express
 var bodyParser = require('body-parser'); 	// get body-parser
 var morgan     = require('morgan'); 		// used to see requests
 var mongoose   = require('mongoose');
-var config 	   = require('./config');
-var path 	   = require('path');
+var config 	   = require('./config'); //importing file that has global environmental variables assigned
+var path 	   = require('path'); //
 
 // APP CONFIGURATION ==================
 // ====================================
@@ -44,7 +44,7 @@ app.use('/api', apiRoutes);
 // MAIN CATCHALL ROUTE ---------------
 // SEND USERS TO FRONTEND ------------
 // has to be registered after API ROUTES
-app.get('*', function(req, res) {
+app.get('*', function(req, res) { // any route that isn't API then load static index.html file
 	res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 

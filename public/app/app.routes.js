@@ -2,10 +2,10 @@ angular.module('app.routes', ['ngRoute'])
 
 .config(function($routeProvider, $locationProvider) {
 
-	$routeProvider
+	$routeProvider //route provider creates the routes,
 
 		// route for the home page
-		.when('/', {
+		.when('/', { //.when waits to hit a specific URL
 			templateUrl : 'app/views/pages/home.html'
 		})
 
@@ -13,7 +13,7 @@ angular.module('app.routes', ['ngRoute'])
 		.when('/login', {
 			templateUrl : 'app/views/pages/login.html',
    			controller  : 'mainController',
-    			controllerAs: 'login'
+    			controllerAs: 'login' //this is used in place of main controller
 		})
 
 		// show all users
